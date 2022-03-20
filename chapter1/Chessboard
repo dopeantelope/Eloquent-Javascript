@@ -1,1 +1,14 @@
+let grid = 11
+let board = ''
 
+for (let row = 1; row <= grid; row++) {
+  for (let column = 1; column <= grid; column++) {
+    if ((row + column) % 2 === 0) {
+      board += "#"
+    } else {
+      board += " "
+    }
+  }
+  board += "\n"
+}
+console.log(board);
