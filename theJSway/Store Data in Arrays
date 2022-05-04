@@ -1,0 +1,41 @@
+// exercise 1
+
+const muskateers = ['Athos', 'Porthos', 'Aramis']
+
+for (let i = 0; i < muskateers.length; i++) {
+  console.log(muskateers[i]);
+}
+
+muskateers.push("D'Artagnan")
+
+muskateers.forEach(muskateer => {
+  console.log(muskateer)
+})
+
+muskateers.splice(2, 1);
+
+for (const muskateer of muskateers) {
+  console.log(muskateer)
+}
+
+// exercise 2
+
+
+const values = [3, 11, 7, 2, 9, 10];
+let total = 0
+for (let i = 0; i < values.length; i++) {
+  total += values[i]
+}
+console.log(total)
+
+let total1 = 0
+values.forEach(value => total1 += value)
+console.log(total1)
+
+let total2 = 0
+for (const value of values) {
+  total2 += value
+}
+console.log(total2)
+
+console.log(values.reduce((x,y) => x + y))
