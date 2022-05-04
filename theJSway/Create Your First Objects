@@ -1,0 +1,24 @@
+//exercise 1
+
+const aurora = {
+  name: 'Aurora',
+  health: 150,
+  strength: 25,
+  xp: 0,
+
+  describe() {
+    return `${this.name} has ${this.health} health points, ${this.strength} strength and ${this.xp} XP.`
+  }
+
+}
+
+//aurora is harmed by an arrow
+aurora.health -= 20;
+
+//aurora finds a strength necklace
+aurora.strength += 10;
+
+//aurora learnt a new skill
+aurora.xp += 15;
+
+console.log(aurora.describe())
