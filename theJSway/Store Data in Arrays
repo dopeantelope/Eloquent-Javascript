@@ -39,3 +39,27 @@ for (const value of values) {
 console.log(total2)
 
 console.log(values.reduce((x,y) => x + y))
+
+
+// exercise 3
+
+const numbers = [3, 11, 7, 2, 9, 10];
+let max = -Infinity
+let min = Infinity
+
+for (number of numbers) {
+  if (number > max) {
+    max = number
+  }
+}
+
+for (number of numbers) {
+  if (number < min) {
+    min = number
+  }
+}
+
+console.log(max)
+console.log(min)
+
+console.log(Math.max(...numbers))
