@@ -38,3 +38,24 @@ const dog = {
 
 console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
 console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);
+
+
+// exercise 3
+
+
+const r = Number(prompt("Enter the circle radius:"));
+
+const circle = {
+  radius: r,
+
+  circumference() {
+    return 2 * 3.14 * r
+  },
+
+  area() {
+    return 3.14 * (r * r)
+  }
+}
+
+console.log(`Its circumference is ${circle.circumference()}`);
+console.log(`Its area is ${circle.area()}`);
