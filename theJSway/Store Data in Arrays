@@ -63,3 +63,17 @@ console.log(max)
 console.log(min)
 
 console.log(Math.max(...numbers))
+
+
+// exercise 4
+
+
+let array = []
+let word = ''
+while (word != 'stop') {
+  word = prompt("Enter a word: ");
+  array.push(word);
+}
+for (let i = 0; i < word.length - 1; i++) {
+  console.log(array[i])
+}
