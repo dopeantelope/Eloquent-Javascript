@@ -1,0 +1,38 @@
+// exercise 1
+
+const styles = ['jazz', 'blues']
+console.log(styles)
+
+styles.push('rock n roll')
+console.log(styles)
+
+styles[Math.floor((styles.length - 1)/2)] = 'classics'
+console.log(styles)
+
+styles.shift()
+console.log(styles)
+
+styles.unshift('rap', 'reggae')
+console.log(styles)
+
+
+// exercise 2
+
+function sumInput() {
+  let numbers = [];
+  let sum = 0;
+
+  while (true) {
+    let value = prompt("enter a number: ");
+    numbers.push(+value)
+
+    if (value === "" || value === null || !isFinite(value)) break;
+
+    sum += +value
+  }
+
+  console.log(numbers)
+  console.log(sum)
+}
+
+sumInput()
