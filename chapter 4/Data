@@ -20,29 +20,40 @@
 // console.log(sum(range(1, 10, -3)));
 
 
-function reverseArray(arr) {
-  let newArr = []
-  for (let i = 0; i < arr.length; i++) {
-    newArr.unshift(arr[i])
-  }
-  console.log(arr)
-  return newArr
-}
+// function reverseArray(arr) {
+//   let newArr = []
+//   for (let i = 0; i < arr.length; i++) {
+//     newArr.unshift(arr[i])
+//   }
+//   console.log(arr)
+//   return newArr
+// }
 
-console.log(reverseArray([1, 2, 3, 4, 5]))
-console.log(reverseArray(["A", "B", "C"]))
+// console.log(reverseArray([1, 2, 3, 4, 5]))
+// console.log(reverseArray(["A", "B", "C"]))
 
-function reverseArrayInPlace(arr) {
-  oldArrayCount = arr.length;
-  for (let i = 0; i < arr.length / 2; i++) {
-    arr.push(arr[oldArrayCount - 1 - i])
-  }
-  for (let j = 0; j < oldArrayCount; j++) {
-    arr.shift(arr[j])
-  }
-  return arr
-}
+// function reverseArrayInPlace(arr) {
+//   oldArrayCount = arr.length;
+//   for (let i = 0; i < arr.length / 2; i++) {
+//     arr.push(arr[oldArrayCount - 1 - i])
+//   }
+//   for (let j = 0; j < oldArrayCount; j++) {
+//     arr.shift(arr[j])
+//   }
+//   return arr
+// }
 
-console.log(reverseArrayInPlace([1, 2, 3, 4, 5]))
-console.log(reverseArrayInPlace([1, 2, 3, 4, 5, 6]))
-console.log(reverseArrayInPlace([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]))
+// console.log(reverseArrayInPlace([1, 2, 3, 4, 5]))
+// console.log(reverseArrayInPlace([1, 2, 3, 4, 5, 6]))
+// console.log(reverseArrayInPlace([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]))
+
+
+function arrayToList(arr) {
+  let newList = {}
+  for (i = arr.length - 1; i >= 0; i--) {
+    newList = {"value": arr[i], "rest": newList}
+  }
+  return newList
+};
+
+console.log(arrayToList([1, 2, 3]))
