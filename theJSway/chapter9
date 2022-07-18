@@ -1,31 +1,11 @@
-// class Dog {
-//   constructor(name, species, size) {
-//     this.name = name
-//     this.species = species
-//     this.size = size
-//   }
-
-//   bark() {
-//     return 'Woof!'
-//   }
-// }
-
-// const fang = new Dog("Fang", "boarhound", 75);
-// console.log(`${fang.name} is a ${fang.species} dog measuring ${fang.size}`);
-// console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
-
-// const snowy = new Dog("Snowy", "terrier", 22);
-// console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
-// console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
-
-
-
 class Character {
   constructor(name, health, strength) {
     this.name = name
     this.health = health
     this.strength = strength
     this.xp = 0 //XP always 0 for new characters
+    this.gold = 10
+    this.keys = 1
   }
 
   // Return the character description
@@ -44,11 +24,15 @@ class Character {
         console.log(`${target.name} has ${target.health} health points left`);
       } else {
         target.health = 0
+        target.gold -= 0
+        target.keys -= 0
         const bonusXP = 10
         console.log(
-          `${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`
+          `${this.name} eliminated ${target.name} and wins ${bonusXP} experience points. ${this.name} allows collected ${target.gold} gold and ${target.keys} key(s).}`
         );
         this.xp += bonusXP;
+        this.gold += target.gold
+        this.keys += target.keys
       }
     } else {
       console.log(`${this.name} can't attack (they've been eliminated)`);
@@ -73,3 +57,52 @@ glacius.attack(monster);
 
 console.log(aurora.describe());
 console.log(glacius.describe());
+
+
+// class Dog {
+//   constructor(name, species, size) {
+//     this.name = name
+//     this.species = species
+//     this.size = size
+//   }
+
+//   bark() {
+//     return this.size > 60 ? 'woof' : 'grrrr'
+//   }
+// }
+
+// const fang = new Dog("Fang", "boarhound", 75);
+// console.log(`${fang.name} is a ${fang.species} dog measuring ${fang.size}`);
+// console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
+
+// const snowy = new Dog("Snowy", "terrier", 22);
+// console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
+// console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
+
+
+class Account {
+  constructor(name) {
+    this.name = name
+    this.balance = 0
+  }
+
+  credit(value) {
+    this.balance += value
+  }
+
+  describe() {
+    return `Owner: ${this.name} Balance: ${this.balance}`
+  }
+}
+
+const sean = new Account('Sean')
+const brad = new Account('Brad')
+const george = new Account('George')
+
+
+array = [sean, brad, george]
+
+array.forEach(element => {
+  element.credit(1000)
+  console.log(element.describe())
+})
